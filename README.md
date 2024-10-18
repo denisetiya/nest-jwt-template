@@ -1,86 +1,127 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+Berikut adalah contoh README yang dapat Anda gunakan sebagai template untuk proyek JWT dengan NestJS. Anda dapat menyesuaikan bagian-bagian tertentu sesuai dengan kebutuhan spesifik proyek Anda.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+```markdown
+# JWT Authentication with NestJS
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Deskripsi
 
-## Description
+Proyek ini adalah template dasar untuk menerapkan otentikasi menggunakan JSON Web Tokens (JWT) di aplikasi NestJS. Proyek ini mencakup fungsi dasar untuk pendaftaran pengguna, login, dan otentikasi dengan JWT.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Fitur
 
-## Project setup
+- Pendaftaran pengguna
+- Login pengguna
+- Perlindungan rute menggunakan JWT
+- Middleware untuk verifikasi token
+- Penggunaan `bcrypt` untuk hashing password
+
+## Prerequisites
+
+Pastikan Anda telah menginstal perangkat lunak berikut:
+
+- [Node.js](https://nodejs.org/) (v14 atau lebih tinggi)
+- [Bun.js](https://bun.sh/)
+- [NestJS CLI](https://docs.nestjs.com/cli/overview) (opsional, jika ingin membuat proyek baru)
+- [PostgreSQL](https://www.postgresql.org/) atau database lain yang didukung (opsional)
+
+## Instalasi
+
+1. Clone repositori ini ke mesin lokal Anda:
+
+   ```bash
+   git clone https://github.com/username/repo-name.git
+   ```
+
+2. Masuk ke direktori proyek:
+
+   ```bash
+   cd repo-name
+   ```
+
+3. Install dependensi:
+
+   ```bash
+   npm install
+   ```
+
+4. Buat file `.env` berdasarkan file `.env.example`:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+5. Sesuaikan pengaturan database dan konfigurasi lainnya di file `.env`.
+
+## Menjalankan Proyek
+
+Untuk menjalankan aplikasi dalam mode pengembangan, gunakan perintah berikut:
 
 ```bash
-$ pnpm install
+npm run start:dev
 ```
 
-## Compile and run the project
+Aplikasi akan berjalan di `http://localhost:3000`.
+
+## Pengujian
+
+Untuk menjalankan pengujian, gunakan perintah berikut:
 
 ```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+npm run test
 ```
 
-## Run tests
+## Penggunaan
 
-```bash
-# unit tests
-$ pnpm run test
+### Registrasi Pengguna
 
-# e2e tests
-$ pnpm run test:e2e
+Untuk mendaftar pengguna baru, kirimkan permintaan POST ke `/auth/register` dengan data berikut:
 
-# test coverage
-$ pnpm run test:cov
+```json
+{
+  "username": "user123",
+  "password": "password"
+}
 ```
 
-## Resources
+### Login Pengguna
 
-Check out a few resources that may come in handy when working with NestJS:
+Untuk login pengguna, kirimkan permintaan POST ke `/auth/login` dengan data berikut:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```json
+{
+  "username": "user123",
+  "password": "password"
+}
+```
 
-## Support
+Jika login berhasil, Anda akan menerima token JWT dalam respons.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Mengakses Rute Terproteksi
 
-## Stay in touch
+Untuk mengakses rute yang dilindungi, Anda perlu menyertakan token JWT di header permintaan:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```
+Authorization: Bearer YOUR_JWT_TOKEN
+```
 
-## License
+## Struktur Proyek
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+```
+src
+├── auth
+│   ├── auth.controller.ts
+│   ├── auth.service.ts
+│   ├── jwt.strategy.ts
+│   └── user.entity.ts
+├── app.module.ts
+└── main.ts
+```
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+## Kontribusi
+
+Jika Anda ingin berkontribusi pada proyek ini, silakan buat pull request atau buka issue untuk diskusi.
+```
