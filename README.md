@@ -1,4 +1,4 @@
-Berikut adalah contoh README yang dapat Anda gunakan sebagai template untuk proyek JWT dengan NestJS. Anda dapat menyesuaikan bagian-bagian tertentu sesuai dengan kebutuhan spesifik proyek Anda.
+
 
 ```markdown
 # JWT Authentication with NestJS
