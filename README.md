@@ -1,6 +1,4 @@
 
-
-```markdown
 # JWT Authentication with NestJS
 
 ## Deskripsi
@@ -124,4 +122,4 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 ## Kontribusi
 
 Jika Anda ingin berkontribusi pada proyek ini, silakan buat pull request atau buka issue untuk diskusi.
-```
+
